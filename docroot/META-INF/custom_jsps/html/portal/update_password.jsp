@@ -61,7 +61,7 @@ PasswordPolicy passwordPolicy = user.getPasswordPolicy();
 </style>
 <div class="login-box">
 	  <div class="login-logo">
-	    <a href="../../index2.html"><img src="<%=themeDisplay.getCompanyLogo()%>"></a>
+	    <a href="#"><img src="<%=themeDisplay.getCompanyLogo()%>"></a>
 	  </div>
 	  <!-- /.login-logo -->
 	  <div class="login-box-body">

@@ -37,6 +37,9 @@
 		%>
 
 		<%= LanguageUtil.format(pageContext, "you-are-signed-in-as-x", signedInAs, false) %>
+		<script>
+			window.location.replace("/c/portal/logout");
+		</script>
 	</c:when>
 	<c:otherwise>
 
@@ -62,8 +65,7 @@
 			  </div>
 			  <!-- /.login-logo -->
 			  <div class="login-box-body">
-			    <p class="login-box-msg">Sign in to start your session</p>
-		
+			    <p class="login-box-msg">Inicia sesión</p>
 
 				<aui:form action="<%= loginURL %>" autocomplete='<%= PropsValues.COMPANY_SECURITY_LOGIN_FORM_AUTOCOMPLETE ? "on" : "off" %>' cssClass="sign-in-form" method="post" name="fm" onSubmit="event.preventDefault();">
 					
@@ -90,7 +92,7 @@
 										</c:if>
 									</c:when>
 									<c:otherwise>
-										<%= LanguageUtil.format(pageContext, "thank-you-for-creating-an-account.-your-password-is-x", userPassword, false) %>
+										<%= LanguageUtil.format(pageContext, "thank-you-for-creating-an-account", userEmailAddress) %>
 									</c:otherwise>
 								</c:choose>
 		
@@ -155,8 +157,6 @@
 						<aui:button cssClass="btn btn-primary btn-block btn-flat" type="submit" value="Ingresar" />
 					</aui:button-row>
 				</aui:form>
-<!-- 				<a href="#">I forgot my password</a><br> -->
-<!-- 			    <a href="register.html" class="text-center">Register a new membership</a> -->
 				<liferay-util:include page="/html/portlet/login/navigation.jsp" />
 			  </div>
 			  <!-- /.login-box-body -->
